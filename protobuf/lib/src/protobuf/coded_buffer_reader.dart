@@ -34,6 +34,7 @@ class CodedBufferReader {
   }
 
   bool isAtEnd() => _bufferPos >= _currentLimit;
+  int remaining() => _currentLimit - _bufferPos;
 
   void _withLimit(int byteLimit, callback) {
     if (byteLimit < 0) {
